@@ -253,7 +253,7 @@ fun NavegacionPorEstado() {
     → NO actualiza UI
 
 ⚠ mutableStateOf
-    → crea estado observable, PERO se reinicia sin remember
+    → crea estado observable, PERO se reinicia sin remember/
 
 ⭐ remember
     → conserva valor en recomposición (no en rotación)
