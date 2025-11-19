@@ -221,36 +221,71 @@ selected  → si esta opción es la actual
 @Composable
 fun RadioButtonsGroup() {
 
-    val opciones = listOf("Rojo", "Verde", "Azul")
-    var selectedOption by rememberSaveable { mutableStateOf(opciones[0]) }
+    var selectedOption by rememberSaveable { mutableStateOf("") }
 
     Column {
-        opciones.forEach { opcion ->
 
-            Row(
-                verticalAlignment = Alignment.CenterVertically,
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(4.dp)
-                    .toggleable(
-                        value = (opcion == selectedOption),
-                        onValueChange = { selectedOption = opcion }
-                    )
-            ) {
-
-                RadioButton(
-                    selected = opcion == selectedOption,
-                    onClick = { selectedOption = opcion }
+        Row(
+            verticalAlignment = Alignment.CenterVertically,
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(4.dp)
+                .toggleable(
+                    value = selectedOption == "Rojo",
+                    onValueChange = { selectedOption = "Rojo" }
                 )
+        ) {
+            RadioButton(
+                selected = selectedOption == "Rojo",
+                onClick = { selectedOption = "Rojo" }
+            )
+            Spacer(modifier = Modifier.width(8.dp))
+            Text(
+                text = "Rojo",
+                fontWeight = if (selectedOption == "Rojo") FontWeight.Bold else FontWeight.Normal
+            )
+        }
 
-                Spacer(modifier = Modifier.width(8.dp))
-
-                Text(
-                    text = opcion,
-                    fontWeight =
-                        if (opcion == selectedOption) FontWeight.Bold else FontWeight.Normal
+        Row(
+            verticalAlignment = Alignment.CenterVertically,
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(4.dp)
+                .toggleable(
+                    value = selectedOption == "Verde",
+                    onValueChange = { selectedOption = "Verde" }
                 )
-            }
+        ) {
+            RadioButton(
+                selected = selectedOption == "Verde",
+                onClick = { selectedOption = "Verde" }
+            )
+            Spacer(modifier = Modifier.width(8.dp))
+            Text(
+                text = "Verde",
+                fontWeight = if (selectedOption == "Verde") FontWeight.Bold else FontWeight.Normal
+            )
+        }
+
+        Row(
+            verticalAlignment = Alignment.CenterVertically,
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(4.dp)
+                .toggleable(
+                    value = selectedOption == "Azul",
+                    onValueChange = { selectedOption = "Azul" }
+                )
+        ) {
+            RadioButton(
+                selected = selectedOption == "Azul",
+                onClick = { selectedOption = "Azul" }
+            )
+            Spacer(modifier = Modifier.width(8.dp))
+            Text(
+                text = "Azul",
+                fontWeight = if (selectedOption == "Azul") FontWeight.Bold else FontWeight.Normal
+            )
         }
     }
 }
