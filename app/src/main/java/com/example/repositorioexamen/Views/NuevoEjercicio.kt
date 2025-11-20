@@ -17,6 +17,77 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.unit.dp
 
 
+
+//Siempre importa únicamente el R del paquete de tu aplicación
+//
+//Es decir, el que corresponde al namespace definido en tu app/build.gradle.
+//
+//Ejemplo:import com.example.miapp.R
+
+//Nunca importes estos R
+
+//No uses nunca:
+/*import androidx.compose.foundation.R
+import androidx.compose.ui.R
+import android.R
+
+Porque estos son R de librerías de Android y no contienen tus imágenes, strings ni layouts.
+Si los importas, tus recursos (R.drawable.miImagen) aparecerán en rojo.
+
+🟣 Cómo saber cuál es el R de mi aplicación
+
+El R correcto siempre coincide con el namespace declarado en tu módulo app.
+
+👉 Abre este archivo:
+app/build.gradle (o build.gradle.kts)
+
+Busca la línea:
+namespace = "com.example.repositorioexamen"
+
+o algo parecido.
+
+Ese texto es el paquete de tu app.
+Entonces tu R correcto será:
+
+import com.example.repositorioexamen.R
+📌 Regla práctica
+Si tu app dice namespace = "X", entonces debes usar:
+
+import X.R
+
+🟣 ¿Cómo encontrarlo rápido en Android Studio?
+
+Cuando escribes R.drawable.miImagen y sale rojo:
+	1.	Pon el cursor encima de R
+	2.	Presiona Alt + Enter
+	3.	Elige Import R que tenga tu namespace
+	4.	Nunca elijas androidx.compose.foundation.R ni android.R ni androidx.compose.ui.R
+
+⸻
+
+🟣 Cómo hacer siempre bien el import de Icons
+
+Cuando usas íconos de Material (por ejemplo Email, Favorite, Notifications):
+
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Email
+
+📌 Regla simple
+	•	Para íconos de Material:
+
+	import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.*
+
+	Para usar en Icon() escribir:
+
+	Icon(
+   imageVector = Icons.Default.Email,
+   contentDescription = "Email"
+)
+
+ */
+
+
 import com.example.repositorioexamen.R
 
 import androidx.compose.ui.res.painterResource
@@ -32,7 +103,6 @@ import androidx.compose.material3.Badge
 import androidx.compose.material3.BadgedBox
 
 
-import androidx.compose.foundation.R
 import androidx.compose.ui.res.painterResource
 
 import androidx.compose.material3.Icon
