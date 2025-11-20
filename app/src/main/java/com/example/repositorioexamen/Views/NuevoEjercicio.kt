@@ -16,7 +16,30 @@ import androidx.compose.material3.HorizontalDivider
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.unit.dp
 
+/*@Composable
+fun SliderConValor() {
 
+    var sliderValue by remember { mutableStateOf(0f) }
+
+    Column(
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
+
+        // Slider
+        Slider(
+            value = sliderValue,
+            onValueChange = { sliderValue = it },
+            valueRange = 0f..100f               // rango del slider
+        )
+
+        // Mostrar el valor
+        Text(
+            text = "Valor: ${sliderValue.toInt()}",
+            fontSize = 20.sp,
+            fontWeight = FontWeight.Bold
+        )
+    }
+}*/
 
 //Siempre importa únicamente el R del paquete de tu aplicación
 //
